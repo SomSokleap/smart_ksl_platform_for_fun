@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="main-nav">
+      <a class="brand nav-brand" href="home.html">
+        <span class="brand-mark">KSL</span>
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Sign Language Learning</h1>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="active" href="home.html">Home</a>
+        <a href="units.html">Units</a>
+        <a href="lesson.html">Lesson</a>
+        <a href="index.html">Logout</a>
+      </div>
+    </nav>
+
+    <section class="home-hero reveal-in">
+      <div>
+        <p class="eyebrow">Learner workspace</p>
+        <h2>Continue your Khmer signing journey</h2>
+        <p class="muted">Choose Finger Spelling or Word Detection, then continue through units, chapters, lessons, practice, and quizzes in order.</p>
+        <div class="hero-actions">
+          <a class="primary-btn link-btn" href="units.html">Start Learning</a>
+          <a class="secondary-btn link-btn" href="lesson.html">Resume Lesson</a>
+        </div>
+      </div>
+      <div class="home-preview">
+        <div class="camera-frame">
+          <div class="skeleton">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <button class="capture-btn" type="button">LIVE</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mode-cards">
+      <a class="mode-card" href="units.html">
+        <p class="eyebrow">Mode 01</p>
+        <h3>Finger Spelling</h3>
+        <p>Learn each Khmer character from sample images and real-time keypoint correction.</p>
+        <strong>14/20 lessons</strong>
+      </a>
+      <a class="mode-card locked-preview" href="units.html">
+        <p class="eyebrow">Mode 02</p>
+        <h3>Word Detection</h3>
+        <p>Start from 20 word classes with video samples and live signing probability.</p>
+        <strong>Locked until basics</strong>
+      </a>
+      <article class="mode-card">
+        <p class="eyebrow">Progress</p>
+        <h3>Chapter readiness</h3>
+        <div class="circle-progress">87%</div>
+        <p>Practice unlocks after 5 lessons in a chapter.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

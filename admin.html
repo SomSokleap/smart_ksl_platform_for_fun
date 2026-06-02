@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="main-nav">
+      <a class="brand nav-brand" href="admin.html">
+        <span class="brand-mark">KSL</span>
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Admin Dashboard</h1>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="active" href="admin.html">Admin</a>
+        <a href="index.html">Logout</a>
+      </div>
+    </nav>
+
+    <section class="page-card reveal-in">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Content manager</p>
+          <h2>Manage learning content</h2>
+        </div>
+        <button class="primary-btn" type="button" data-toast-message="Create lesson modal placeholder">Add Lesson</button>
+      </div>
+
+      <div class="admin-grid">
+        <article class="unit-card current">
+          <span class="unit-number">01</span>
+          <h3>Units</h3>
+          <p>Create units and set unlock order.</p>
+        </article>
+        <article class="unit-card">
+          <span class="unit-number">02</span>
+          <h3>Chapters</h3>
+          <p>Group every 5 lessons and attach practice.</p>
+        </article>
+        <article class="unit-card">
+          <span class="unit-number">03</span>
+          <h3>Lessons</h3>
+          <p>Add sample image/video, keypoint data, and quiz rules.</p>
+        </article>
+      </div>
+    </section>
+    <div class="toast page-toast" role="status" aria-live="polite" data-toast></div>
+  </main>
+</body>
+</html>

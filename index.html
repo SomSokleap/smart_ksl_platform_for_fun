@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-panel auth-panel-page" aria-label="Login options">
+      <div class="brand">
+        <span class="brand-mark">KSL</span>
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Sign Language Learning</h1>
+        </div>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Account type">
+        <button class="tab active" type="button" data-auth-tab="learner">Learner</button>
+        <button class="tab" type="button" data-auth-tab="admin">Admin</button>
+      </div>
+
+      <div class="login-card" data-auth-panel="learner">
+        <p class="eyebrow">Start learning</p>
+        <h2>Choose your sign-in path</h2>
+        <p class="muted">Learners can continue with SSO or enter as a guest.</p>
+
+        <div class="sso-grid">
+          <a class="sso facebook" href="home.html">f <span>Facebook</span></a>
+          <a class="sso telegram" href="home.html">TG <span>Telegram</span></a>
+          <a class="sso google" href="home.html">G <span>Google</span></a>
+        </div>
+
+        <a class="guest-btn link-btn" href="home.html">Join as Guest</a>
+      </div>
+
+      <div class="login-card hidden" data-auth-panel="admin">
+        <p class="eyebrow">Admin dashboard</p>
+        <h2>Manage content</h2>
+        <p class="muted">Admins manage units, chapters, lessons, quizzes, and learner progress.</p>
+
+        <form class="admin-form" data-admin-form>
+          <label>
+            Email or username
+            <input type="text" placeholder="admin@sklschool.org" required>
+          </label>
+          <label>
+            Password
+            <input type="password" placeholder="password" required>
+          </label>
+          <div class="form-row">
+            <label class="check">
+              <input type="checkbox" checked>
+              Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="primary-btn" type="submit">Login to Admin</button>
+        </form>
+      </div>
+
+      <div class="toast" role="status" aria-live="polite" data-toast></div>
+    </section>
+  </main>
+</body>
+</html>

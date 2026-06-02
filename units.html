@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Units | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="main-nav">
+      <a class="brand nav-brand" href="home.html">
+        <span class="brand-mark">KSL</span>
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Sign Language Learning</h1>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a class="active" href="units.html">Units</a>
+        <a href="lesson.html">Lesson</a>
+        <a href="index.html">Logout</a>
+      </div>
+    </nav>
+
+    <section class="curriculum page-card reveal-in">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Curriculum map</p>
+          <h2>Units, chapters, lessons, practice, quiz</h2>
+        </div>
+        <button class="secondary-btn" type="button" data-toast-message="Analytics preview: accuracy, repeats, quiz progress">View analytics</button>
+      </div>
+
+      <div class="unit-grid">
+        <article class="unit-card current">
+          <span class="unit-number">01</span>
+          <h3>Khmer Finger Basics</h3>
+          <p>5 lessons per chapter with randomized practice after each chapter.</p>
+          <div class="lesson-dots">
+            <span class="done"></span><span class="done"></span><span class="done"></span><span class="active"></span><span></span>
+          </div>
+        </article>
+        <article class="unit-card locked-preview">
+          <span class="unit-number">02</span>
+          <h3>Common Daily Words</h3>
+          <p>First 20 word classes for video-based real-time detection.</p>
+          <div class="lesson-dots">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </article>
+        <article class="unit-card locked-preview">
+          <span class="unit-number">03</span>
+          <h3>Progress Exercise</h3>
+          <p>Quiz and exercise results track accuracy, repetition, and improvement over time.</p>
+          <div class="lesson-dots">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </article>
+      </div>
+
+      <div class="unit-path" aria-label="Units with chapters and lessons">
+        <details class="unit-accordion" open>
+          <summary>
+            <span class="unit-number">01</span>
+            <strong>Unit 01: Khmer Finger Basics</strong>
+            <em>Current unit / 3 of 5 lessons completed</em>
+          </summary>
+
+          <div class="chapter-list" aria-label="Chapters in Unit 01">
+            <details class="chapter-card" open>
+              <summary>
+                <span class="chapter-index">Chapter 01</span>
+                <strong>Foundation Hand Shapes</strong>
+                <em>5 lessons + practice</em>
+              </summary>
+              <div class="lesson-list">
+                <a class="lesson-row complete" href="lesson.html?lesson=ka">
+                  <span class="lesson-state">Done</span>
+                  <span><strong>Lesson 01</strong>Character Ka</span>
+                  <b>96%</b>
+                </a>
+                <a class="lesson-row complete" href="lesson.html?lesson=kha">
+                  <span class="lesson-state">Done</span>
+                  <span><strong>Lesson 02</strong>Character Kha</span>
+                  <b>92%</b>
+                </a>
+                <a class="lesson-row complete" href="lesson.html?lesson=ko">
+                  <span class="lesson-state">Done</span>
+                  <span><strong>Lesson 03</strong>Character Ko</span>
+                  <b>89%</b>
+                </a>
+                <a class="lesson-row current" href="lesson.html?lesson=kho">
+                  <span class="lesson-state">Now</span>
+                  <span><strong>Lesson 04</strong>Character Kho</span>
+                  <b>Continue</b>
+                </a>
+                <button class="lesson-row locked" type="button" disabled>
+                  <span class="lesson-state">Lock</span>
+                  <span><strong>Lesson 05</strong>Character Ngo</span>
+                  <b>Next</b>
+                </button>
+                <button class="lesson-row locked practice" type="button" disabled>
+                  <span class="lesson-state">Lock</span>
+                  <span><strong>Practice</strong>Random review from Chapter 01</span>
+                  <b>After 5 lessons</b>
+                </button>
+              </div>
+            </details>
+
+            <details class="chapter-card">
+              <summary>
+                <span class="chapter-index">Chapter 02</span>
+                <strong>Finger Spelling Accuracy</strong>
+                <em>Locked until Chapter 01 practice</em>
+              </summary>
+              <div class="lesson-list">
+                <button class="lesson-row locked" type="button" disabled><span class="lesson-state">Lock</span><span><strong>Lesson 01</strong>Character Cha</span><b>Locked</b></button>
+                <button class="lesson-row locked" type="button" disabled><span class="lesson-state">Lock</span><span><strong>Lesson 02</strong>Character Chha</span><b>Locked</b></button>
+                <button class="lesson-row locked" type="button" disabled><span class="lesson-state">Lock</span><span><strong>Lesson 03</strong>Character Cho</span><b>Locked</b></button>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="unit-accordion locked-unit">
+          <summary>
+            <span class="unit-number">02</span>
+            <strong>Unit 02: Common Daily Words</strong>
+            <em>Locked until Unit 01 quiz is completed</em>
+          </summary>
+          <div class="chapter-list">
+            <details class="chapter-card">
+              <summary><span class="chapter-index">Chapter 01</span><strong>Starter Word Detection</strong><em>20 word classes</em></summary>
+              <div class="lesson-list">
+                <button class="lesson-row locked" type="button" disabled><span class="lesson-state">Lock</span><span><strong>Word Set 01</strong>First 5 daily word classes</span><b>Locked</b></button>
+              </div>
+            </details>
+          </div>
+        </details>
+      </div>
+    </section>
+    <div class="toast page-toast" role="status" aria-live="polite" data-toast></div>
+  </main>
+</body>
+</html>
