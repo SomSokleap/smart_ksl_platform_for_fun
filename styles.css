@@ -481,7 +481,6 @@ a {
   box-sizing: border-box;
 }
 
-/* Password input */
 .password-field input {
   flex: 1;
 
@@ -494,7 +493,6 @@ a {
   color: var(--ink);
 }
 
-/* Eye button */
 .toggle-password {
   width: 44px;
   height: 44px;
@@ -511,7 +509,6 @@ a {
   color: var(--green);
 }
 
-/* Focus effect */
 .admin-form input[type="text"]:focus,
 .password-field:focus-within {
   border-color: var(--green);
@@ -537,6 +534,8 @@ a {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 8px !important;
+  cursor: pointer;
+  user-select: none;
 }
 
 .primary-btn {
