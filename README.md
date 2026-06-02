@@ -8,9 +8,10 @@ The platform is designed as a simple multi-page learning experience:
 
 1. `index.html` - Login page
 2. `home.html` - Learner homepage
-3. `units.html` - Unit, chapter, and lesson listing
-4. `lesson.html` - Real-time lesson practice page
-5. `admin.html` - Simple admin dashboard mockup
+3. `finger-spelling.html` - Finger Spelling learning track
+4. `word-detection.html` - Word Detection learning track
+5. `lesson.html` - Real-time lesson practice page
+6. `admin.html` - Simple admin dashboard mockup
 
 ## Features
 
@@ -19,7 +20,7 @@ The platform is designed as a simple multi-page learning experience:
 - Homepage for learners after login
 - Unit -> Chapter -> Lesson learning structure
 - Locked lessons to prevent learners from skipping ahead
-- Finger Spelling and Word Detection mode switching
+- Separate Finger Spelling and Word Detection learning pages
 - Real-time practice UI mockup with camera/keypoint overlay
 - Simulated probability feedback percentages
 - Continue lesson interaction
@@ -33,7 +34,10 @@ The platform is designed as a simple multi-page learning experience:
 Playground/
   index.html      Login page
   home.html       Learner homepage
-  units.html      Units, chapters, and lessons page
+  finger-spelling.html
+                  Finger Spelling units, chapters, and lessons
+  word-detection.html
+                  Word Detection units, chapters, and lessons
   lesson.html     Lesson practice page
   admin.html      Admin dashboard mockup
   styles.css      Shared styling for all pages
@@ -100,15 +104,37 @@ The learner homepage after login. It shows the main learning modes:
 - Word Detection
 - Chapter readiness progress
 
-### Units Page
+### Finger Spelling Page
 
 File:
 
 ```text
-units.html
+finger-spelling.html
 ```
 
-This page shows the learning order:
+This page is the character learning track. It shows:
+
+- Finger Spelling units
+- Chapters with 5 lessons each
+- Locked future lessons
+- Practice after each chapter
+
+### Word Detection Page
+
+File:
+
+```text
+word-detection.html
+```
+
+This page is the word/video learning track. It starts with 20 word classes and shows:
+
+- Word Detection units
+- Video-based word lessons
+- Locked future lessons
+- Practice after each chapter
+
+Both track pages follow this learning order:
 
 ```text
 Unit -> Chapter -> Lesson -> Practice -> Quiz
@@ -132,9 +158,14 @@ The lesson page includes:
 - Hand angle percentage
 - Finger position percentage
 - Correction result
-- Finger Spelling and Word Detection switching
+- Track-aware lesson content for Finger Spelling or Word Detection
 
-The `REC` button simulates real-time detection feedback.
+The `REC` button simulates real-time detection feedback. Lesson links can pass a track, for example:
+
+```text
+lesson.html?track=finger&lesson=kho
+lesson.html?track=word&lesson=hello
+```
 
 ### Admin Page
 

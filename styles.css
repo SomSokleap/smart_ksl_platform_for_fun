@@ -231,6 +231,18 @@ a {
   margin-top: 18px;
 }
 
+.track-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+}
+
 .link-btn {
   min-height: 46px;
   display: inline-grid;
@@ -1231,7 +1243,8 @@ a {
   }
 
   .main-nav,
-  .home-hero {
+  .home-hero,
+  .track-bar {
     align-items: stretch;
     flex-direction: column;
   }

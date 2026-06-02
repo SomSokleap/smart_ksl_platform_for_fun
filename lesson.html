@@ -22,7 +22,8 @@
       </a>
       <div class="nav-links">
         <a href="home.html">Home</a>
-        <a href="units.html">Units</a>
+        <a href="finger-spelling.html">Finger Spelling</a>
+        <a href="word-detection.html">Word Detection</a>
         <a class="active" href="lesson.html">Lesson</a>
         <a class="logout-btn" href="index.html" data-logout aria-label="Logout" data-tooltip="Logout">
           <span aria-hidden="true">OUT</span>
@@ -40,9 +41,9 @@
           <span class="status-badge">Real-time</span>
         </div>
 
-        <div class="mode-switch lesson-mode" aria-label="Learning mode">
-          <button class="mode active" type="button" data-mode="finger">Finger Spelling</button>
-          <button class="mode" type="button" data-mode="word">Word Detection</button>
+        <div class="track-bar" aria-label="Current learning track">
+          <span class="status-badge" data-track-label>Finger Spelling Track</span>
+          <a class="secondary-btn link-btn" data-track-back href="finger-spelling.html">Back to Track</a>
         </div>
 
         <div class="practice-area">
@@ -108,7 +109,7 @@
           <p>After every 5 lessons, learners practice random signs from the current chapter.</p>
         </article>
 
-        <a class="secondary-btn link-btn full-btn" href="units.html">Back to Units</a>
+        <a class="secondary-btn link-btn full-btn" data-track-back href="finger-spelling.html">Back to Track</a>
       </aside>
     </section>
     <div class="toast page-toast" role="status" aria-live="polite" data-toast></div>

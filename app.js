@@ -127,21 +127,48 @@
   }
 
   function loadLessonFromQuery() {
-    const lessons = {
-      ka: ["Unit 01 / Chapter 01 / Lesson 01", "Character: Ka", [96, 91, 94]],
-      kha: ["Unit 01 / Chapter 01 / Lesson 02", "Character: Kha", [92, 87, 90]],
-      ko: ["Unit 01 / Chapter 01 / Lesson 03", "Character: Ko", [89, 82, 86]],
-      kho: ["Unit 01 / Chapter 01 / Lesson 04", "Character: Kho", [95, 76, 87]]
+    const tracks = {
+      finger: {
+        label: "Finger Spelling Track",
+        back: "finger-spelling.html",
+        sample: "Sample image with hand keypoints",
+        live: "Live learner camera with keypoint overlay",
+        defaultLesson: "kho",
+        lessons: {
+          ka: ["Unit 01 / Chapter 01 / Lesson 01", "Character: Ka", [96, 91, 94]],
+          kha: ["Unit 01 / Chapter 01 / Lesson 02", "Character: Kha", [92, 87, 90]],
+          ko: ["Unit 01 / Chapter 01 / Lesson 03", "Character: Ko", [89, 82, 86]],
+          kho: ["Unit 01 / Chapter 01 / Lesson 04", "Character: Kho", [95, 76, 87]]
+        }
+      },
+      word: {
+        label: "Word Detection Track",
+        back: "word-detection.html",
+        sample: "Sample video with pose and hand keypoints",
+        live: "Live signing video with real-time word probability",
+        defaultLesson: "hello",
+        lessons: {
+          hello: ["Unit 01 / Chapter 01 / Word 01", "Word: Hello", [82, 71, 78]],
+          thanks: ["Unit 01 / Chapter 01 / Word 02", "Word: Thank You", [0, 0, 0]]
+        }
+      }
     };
     const query = new URLSearchParams(window.location.search);
-    const selected = lessons[query.get("lesson")];
+    const track = tracks[query.get("track")] || tracks.finger;
+    const selected = track.lessons[query.get("lesson") || track.defaultLesson];
 
     if (!selected) {
       return;
     }
 
+    setText("[data-track-label]", track.label);
+    setText("[data-sample-copy]", track.sample);
+    setText("[data-live-copy]", track.live);
     setText("[data-lesson-meta]", selected[0]);
     setText("[data-lesson-title]", selected[1]);
+    document.querySelectorAll("[data-track-back]").forEach((link) => {
+      link.setAttribute("href", track.back);
+    });
     updateScores(selected[2]);
   }
 
