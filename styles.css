@@ -453,8 +453,8 @@ a {
   font-weight: 700;
 }
 
-.admin-form input[type="text"],
-.admin-form input[type="password"] {
+/* Username field */
+.admin-form input[type="text"] {
   min-height: 44px;
   width: 100%;
   border: 1px solid var(--line);
@@ -463,9 +463,57 @@ a {
   color: var(--ink);
   background: #fbfdfc;
   outline: none;
+  box-sizing: border-box;
 }
 
-.admin-form input:focus {
+/* Password wrapper */
+.password-field {
+  display: flex;
+  align-items: center;
+
+  min-height: 44px;
+  width: 100%;
+
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  background: #fbfdfc;
+  box-sizing: border-box;
+}
+
+/* Password input */
+.password-field input {
+  flex: 1;
+
+  min-height: 42px;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  padding: 0 13px;
+  color: var(--ink);
+}
+
+/* Eye button */
+.toggle-password {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.toggle-password:hover {
+  color: var(--green);
+}
+
+/* Focus effect */
+.admin-form input[type="text"]:focus,
+.password-field:focus-within {
   border-color: var(--green);
   box-shadow: 0 0 0 4px rgba(31, 159, 111, 0.12);
 }

@@ -10,6 +10,32 @@
   revealPage();
   loadLessonFromQuery();
 
+  document.querySelector('.toggle-password').addEventListener('click', function () {
+    const input = document.getElementById('password');
+    const icon = this.querySelector('i');
+
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      input.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  });
+
+  function togglePassword() {
+    const password = document.getElementById("password");
+    const icon = document.querySelector(".toggle-password i");
+
+    if (password.type === "password") {
+      password.type = "text";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      password.type = "password";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  }
+
   function bindAuthTabs() {
     document.querySelectorAll("[data-auth-tab]").forEach((button) => {
       button.addEventListener("click", () => {
