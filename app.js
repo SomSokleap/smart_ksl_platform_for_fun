@@ -6,6 +6,7 @@
   bindContinueLesson();
   bindToastButtons();
   bindLockedLessons();
+  bindLogoutConfirmation();
   revealPage();
   loadLessonFromQuery();
 
@@ -109,6 +110,19 @@
   function bindLockedLessons() {
     document.querySelectorAll(".lesson-row.locked").forEach((row) => {
       row.addEventListener("click", () => showToast("Locked. Complete the previous lesson first."));
+    });
+  }
+
+  function bindLogoutConfirmation() {
+    document.querySelectorAll("[data-logout]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const confirmed = window.confirm("Are you sure you want to logout?");
+
+        if (!confirmed) {
+          event.preventDefault();
+          showToast("Logout cancelled");
+        }
+      });
     });
   }
 
