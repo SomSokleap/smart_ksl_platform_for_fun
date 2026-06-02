@@ -47,13 +47,7 @@ Playground/
 
 ## How To Open
 
-Open this folder on your computer:
-
-```text
-C:\Users\ASUS\Documents\Playground
-```
-
-Then double-click:
+Double-click:
 
 ```text
 index.html
