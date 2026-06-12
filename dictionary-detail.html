@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary Detail | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="main-nav">
+      <a class="brand nav-brand" href="home.html">
+        <img src="assets\logo.png" style="width: 40px; height: 40px;" />
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Sign Language Learning</h1>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="finger-spelling.html">Finger Spelling</a>
+        <a href="word-detection.html">Word Detection</a>
+        <a class="active" href="dictionary.html">Dictionary</a>
+        <a class="logout-btn" href="index.html" data-logout aria-label="Logout" data-tooltip="Logout">
+          <span aria-hidden="true">OUT</span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="dictionary-detail reveal-in">
+      <div class="detail-heading">
+        <div>
+          <p class="eyebrow" data-detail-type>Character</p>
+          <h2 data-detail-title>Kho</h2>
+          <p class="muted" data-detail-summary>Current finger spelling lesson with sample image and keypoint guidance.</p>
+        </div>
+        <a class="secondary-btn link-btn" href="dictionary.html">Back to Dictionary</a>
+      </div>
+
+      <div class="detail-layout">
+        <article class="detail-media">
+          <div class="media-block">
+            <div class="hand-demo">
+            </div>
+          </div>
+        </article>
+
+        <aside class="detail-info">
+          <article class="progress-card">
+            <p class="eyebrow">Learning info</p>
+            <h3 data-detail-track>Finger Spelling</h3>
+            <div class="mini-stat"><span>Type</span><strong data-detail-kind>Character</strong></div>
+            <div class="mini-stat"><span>Difficulty</span><strong data-detail-difficulty>Beginner</strong></div>
+          </article>
+
+          <article class="progress-card">
+            <p class="eyebrow">Suggestion</p>
+            <h3>How to learn</h3>
+            <p data-detail-tip>Watch the sample, copy the hand shape, then open the lesson and compare your keypoints.</p>
+          </article>
+
+          <a class="primary-btn link-btn full-btn" data-detail-practice href="lesson.html?track=finger&lesson=kho">Practice this sign</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

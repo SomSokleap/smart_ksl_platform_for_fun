@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary | Smart Khmer Sign Language Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="main-nav">
+      <a class="brand nav-brand" href="home.html">
+        <img src="assets\logo.png" style="width: 40px; height: 40px;" />
+        <div>
+          <p>Smart Khmer</p>
+          <h1>Sign Language Learning</h1>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="finger-spelling.html">Finger Spelling</a>
+        <a href="word-detection.html">Word Detection</a>
+        <a class="active" href="dictionary.html">Dictionary</a>
+        <a class="logout-btn" href="index.html" data-logout aria-label="Logout" data-tooltip="Logout">
+          <span aria-hidden="true">OUT</span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="dictionary-page reveal-in">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Dictionary</p>
+          <h2>Browse Khmer signs by character or word</h2>
+        </div>
+        </div>
+
+      <div class="dictionary-tools">
+        <label class="search-field">
+          <span>Search</span>
+          <input type="search" placeholder="Search character or word" data-dictionary-search>
+        </label>
+        <label class="filter-field">
+          <span>Order</span>
+          <select data-dictionary-sort>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </label>
+        <div class="filter-chips" aria-label="Dictionary type filter">
+          <button class="chip active" type="button" data-dictionary-type="all">All</button>
+          <button class="chip" type="button" data-dictionary-type="character">Characters</button>
+          <button class="chip" type="button" data-dictionary-type="word">Words</button>
+        </div>
+      </div>
+
+      <div class="dictionary-grid" data-dictionary-list>
+        <a class="dictionary-card" href="dictionary-detail.html?id=ka" data-title="Ka" data-type="character">
+          <span class="dict-tag">Character</span>
+          <strong>Ka</strong>
+          <p>Finger spelling sample with hand keypoints.</p>
+        </a>
+        <a class="dictionary-card" href="dictionary-detail.html?id=kha" data-title="Kha" data-type="character">
+          <span class="dict-tag">Character</span>
+          <strong>Kha</strong>
+          <p>Character hand shape and learner correction reference.</p>
+        </a>
+        <a class="dictionary-card" href="dictionary-detail.html?id=kho" data-title="Kho" data-type="character">
+          <span class="dict-tag">Character</span>
+          <strong>Kho</strong>
+          <p>Current finger spelling lesson with sample image.</p>
+        </a>
+        <a class="dictionary-card" href="dictionary-detail.html?id=hello" data-title="Hello" data-type="word">
+          <span class="dict-tag word">Word</span>
+          <strong>Hello</strong>
+          <p>Starter video sign from the Word Detection track.</p>
+        </a>
+        <a class="dictionary-card" href="dictionary-detail.html?id=help" data-title="Help" data-type="word">
+          <span class="dict-tag word">Word</span>
+          <strong>Help</strong>
+          <p>Daily word class with video and pose keypoints.</p>
+        </a>
+        <a class="dictionary-card" href="dictionary-detail.html?id=thanks" data-title="Thank You" data-type="word">
+          <span class="dict-tag word">Word</span>
+          <strong>Thank You</strong>
+          <p>Word Detection video sample and pronunciation note.</p>
+        </a>
+      </div>
+
+      <p class="empty-state hidden" data-dictionary-empty>No matching signs found.</p>
+    </section>
+    <div class="toast page-toast" role="status" aria-live="polite" data-toast></div>
+  </main>
+</body>
+</html>

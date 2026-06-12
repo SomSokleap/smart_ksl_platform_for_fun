@@ -10,8 +10,10 @@ The platform is designed as a simple multi-page learning experience:
 2. `home.html` - Learner homepage
 3. `finger-spelling.html` - Finger Spelling learning track
 4. `word-detection.html` - Word Detection learning track
-5. `lesson.html` - Real-time lesson practice page
-6. `admin.html` - Simple admin dashboard mockup
+5. `dictionary.html` - Searchable sign dictionary
+6. `dictionary-detail.html` - Dictionary detail page
+7. `lesson.html` - Real-time lesson practice page
+8. `admin.html` - Simple admin dashboard mockup
 
 ## Features
 
@@ -21,6 +23,8 @@ The platform is designed as a simple multi-page learning experience:
 - Unit -> Chapter -> Lesson learning structure
 - Locked lessons to prevent learners from skipping ahead
 - Separate Finger Spelling and Word Detection learning pages
+- Dictionary page with search, type filter, and A-Z/Z-A ordering
+- Dictionary detail page with image/video sample areas
 - Real-time practice UI mockup with camera/keypoint overlay
 - Simulated probability feedback percentages
 - Continue lesson interaction
@@ -38,6 +42,9 @@ Playground/
                   Finger Spelling units, chapters, and lessons
   word-detection.html
                   Word Detection units, chapters, and lessons
+  dictionary.html Searchable word and character dictionary
+  dictionary-detail.html
+                  Dictionary detail page with media samples
   lesson.html     Lesson practice page
   admin.html      Admin dashboard mockup
   styles.css      Shared styling for all pages
@@ -47,7 +54,13 @@ Playground/
 
 ## How To Open
 
-Double-click:
+Open this folder on your computer:
+
+```text
+C:\Users\ASUS\Documents\Playground
+```
+
+Then double-click:
 
 ```text
 index.html
@@ -135,6 +148,37 @@ Unit -> Chapter -> Lesson -> Practice -> Quiz
 ```
 
 Learners must study step by step. Future lessons are disabled and locked.
+
+### Dictionary Page
+
+File:
+
+```text
+dictionary.html
+```
+
+The dictionary lets learners browse signs outside the lesson path. It includes:
+
+- Search bar
+- A-Z and Z-A sorting
+- All, Characters, and Words filters
+- Cards for each word or character
+
+### Dictionary Detail Page
+
+File:
+
+```text
+dictionary-detail.html
+```
+
+The detail page shows:
+
+- Word or character name
+- Type and learning track
+- Image sample area with keypoints
+- Video sample preview area
+- Difficulty, status, learning suggestion, and practice link
 
 ### Lesson Page
 

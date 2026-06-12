@@ -7,34 +7,10 @@
   bindToastButtons();
   bindLockedLessons();
   bindLogoutConfirmation();
+  bindDictionary();
+  loadDictionaryDetail();
   revealPage();
   loadLessonFromQuery();
-
-  document.querySelector('.toggle-password').addEventListener('click', function () {
-    const input = document.getElementById('password');
-    const icon = this.querySelector('i');
-
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.classList.replace('fa-eye', 'fa-eye-slash');
-    } else {
-      input.type = 'password';
-      icon.classList.replace('fa-eye-slash', 'fa-eye');
-    }
-  });
-
-  function togglePassword() {
-    const password = document.getElementById("password");
-    const icon = document.querySelector(".toggle-password i");
-
-    if (password.type === "password") {
-      password.type = "text";
-      icon.classList.replace("fa-eye", "fa-eye-slash");
-    } else {
-      password.type = "password";
-      icon.classList.replace("fa-eye-slash", "fa-eye");
-    }
-  }
 
   function bindAuthTabs() {
     document.querySelectorAll("[data-auth-tab]").forEach((button) => {
@@ -150,6 +126,98 @@
         }
       });
     });
+  }
+
+  function bindDictionary() {
+    const search = document.querySelector("[data-dictionary-search]");
+    const sort = document.querySelector("[data-dictionary-sort]");
+    const typeButtons = document.querySelectorAll("[data-dictionary-type]");
+
+    if (!search || !sort) {
+      return;
+    }
+
+    typeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        typeButtons.forEach((item) => item.classList.toggle("active", item === button));
+        filterDictionary();
+      });
+    });
+
+    search.addEventListener("input", filterDictionary);
+    sort.addEventListener("change", filterDictionary);
+    filterDictionary();
+  }
+
+  function filterDictionary() {
+    const search = document.querySelector("[data-dictionary-search]");
+    const sort = document.querySelector("[data-dictionary-sort]");
+    const list = document.querySelector("[data-dictionary-list]");
+    const empty = document.querySelector("[data-dictionary-empty]");
+    const activeType = document.querySelector("[data-dictionary-type].active")?.dataset.dictionaryType || "all";
+
+    if (!search || !sort || !list) {
+      return;
+    }
+
+    const query = search.value.trim().toLowerCase();
+    const cards = Array.from(list.querySelectorAll(".dictionary-card"));
+
+    cards
+      .sort((a, b) => {
+        const first = a.dataset.title.toLowerCase();
+        const second = b.dataset.title.toLowerCase();
+        return sort.value === "az" ? first.localeCompare(second) : second.localeCompare(first);
+      })
+      .forEach((card) => list.appendChild(card));
+
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const matchesSearch = card.dataset.title.toLowerCase().includes(query);
+      const matchesType = activeType === "all" || card.dataset.type === activeType;
+      const isVisible = matchesSearch && matchesType;
+
+      card.classList.toggle("hidden", !isVisible);
+      if (isVisible) {
+        visibleCount += 1;
+      }
+    });
+
+    empty?.classList.toggle("hidden", visibleCount !== 0);
+  }
+
+  function loadDictionaryDetail() {
+    const title = document.querySelector("[data-detail-title]");
+
+    if (!title) {
+      return;
+    }
+
+    const entries = {
+      ka: detailEntry("Ka", "Character", "Finger Spelling", "Beginner", "Completed", "Finger spelling sample with hand keypoints.", "Practice clean palm direction and stable finger spacing.", "lesson.html?track=finger&lesson=ka"),
+      kha: detailEntry("Kha", "Character", "Finger Spelling", "Beginner", "Completed", "Character hand shape and learner correction reference.", "Focus on thumb position and match the sample image first.", "lesson.html?track=finger&lesson=kha"),
+      kho: detailEntry("Kho", "Character", "Finger Spelling", "Beginner", "In progress", "Current finger spelling lesson with sample image and keypoint guidance.", "Watch the sample, copy the hand shape, then compare your keypoints.", "lesson.html?track=finger&lesson=kho"),
+      hello: detailEntry("Hello", "Word", "Word Detection", "Beginner", "Available", "Starter Word Detection video sample for greeting practice.", "Watch the video once, then repeat the whole movement slowly.", "lesson.html?track=word&lesson=hello"),
+      help: detailEntry("Help", "Word", "Word Detection", "Beginner", "Locked preview", "Daily word class with video and pose keypoints.", "Unlock this after finishing the earlier starter word lessons.", "word-detection.html"),
+      thanks: detailEntry("Thank You", "Word", "Word Detection", "Beginner", "Next word", "Word Detection video sample and movement note.", "Keep the movement smooth and check the probability feedback.", "lesson.html?track=word&lesson=thanks")
+    };
+
+    const query = new URLSearchParams(window.location.search);
+    const entry = entries[query.get("id")] || entries.kho;
+
+    setText("[data-detail-type]", entry.kind);
+    setText("[data-detail-title]", entry.title);
+    setText("[data-detail-summary]", entry.summary);
+    setText("[data-detail-track]", entry.track);
+    setText("[data-detail-kind]", entry.kind);
+    setText("[data-detail-difficulty]", entry.difficulty);
+    setText("[data-detail-status]", entry.status);
+    setText("[data-detail-tip]", entry.tip);
+    document.querySelector("[data-detail-practice]")?.setAttribute("href", entry.practice);
+  }
+
+  function detailEntry(title, kind, track, difficulty, status, summary, tip, practice) {
+    return { title, kind, track, difficulty, status, summary, tip, practice };
   }
 
   function loadLessonFromQuery() {

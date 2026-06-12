@@ -221,6 +221,179 @@ a {
   color: var(--green-dark);
 }
 
+.dictionary-page,
+.dictionary-detail {
+  display: grid;
+  gap: 24px;
+}
+
+.dictionary-tools {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 160px auto;
+  align-items: end;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.search-field,
+.filter-field {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.search-field input,
+.filter-field select {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: #ffffff;
+  outline: none;
+}
+
+.search-field input:focus,
+.filter-field select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(31, 159, 111, 0.12);
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.chip.active,
+.chip:hover {
+  color: var(--green-dark);
+  background: var(--mint);
+  border-color: rgba(31, 159, 111, 0.24);
+}
+
+.dictionary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.dictionary-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.dictionary-card:hover {
+  border-color: rgba(31, 159, 111, 0.35);
+  transform: translateY(-2px);
+}
+
+.dictionary-card strong {
+  font-size: 28px;
+}
+
+.dictionary-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.dictionary-card b {
+  margin-top: auto;
+  color: var(--green-dark);
+  font-size: 13px;
+}
+
+.dict-tag {
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--green-dark);
+  background: var(--mint);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dict-tag.word {
+  color: #8a5d00;
+  background: #ffe7a8;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 18px;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  color: var(--muted);
+  font-weight: 800;
+  text-align: center;
+}
+
+.detail-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+}
+
+.detail-heading h2 {
+  margin: 5px 0 8px;
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 0.95;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 18px;
+}
+
+.detail-media {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+.media-block {
+  display: grid;
+  gap: 10px;
+}
+
+.media-block p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.detail-info {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
 .lesson-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -453,8 +626,8 @@ a {
   font-weight: 700;
 }
 
-/* Username field */
-.admin-form input[type="text"] {
+.admin-form input[type="text"],
+.admin-form input[type="password"] {
   min-height: 44px;
   width: 100%;
   border: 1px solid var(--line);
@@ -463,54 +636,9 @@ a {
   color: var(--ink);
   background: #fbfdfc;
   outline: none;
-  box-sizing: border-box;
 }
 
-/* Password wrapper */
-.password-field {
-  display: flex;
-  align-items: center;
-
-  min-height: 44px;
-  width: 100%;
-
-  border: 1px solid var(--line);
-  border-radius: 12px;
-
-  background: #fbfdfc;
-  box-sizing: border-box;
-}
-
-.password-field input {
-  flex: 1;
-
-  min-height: 42px;
-  border: none;
-  outline: none;
-  background: transparent;
-
-  padding: 0 13px;
-  color: var(--ink);
-}
-
-.toggle-password {
-  width: 44px;
-  height: 44px;
-
-  border: none;
-  background: transparent;
-  cursor: pointer;
-
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.toggle-password:hover {
-  color: var(--green);
-}
-
-.admin-form input[type="text"]:focus,
-.password-field:focus-within {
+.admin-form input:focus {
   border-color: var(--green);
   box-shadow: 0 0 0 4px rgba(31, 159, 111, 0.12);
 }
@@ -534,8 +662,6 @@ a {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 8px !important;
-  cursor: pointer;
-  user-select: none;
 }
 
 .primary-btn {
@@ -654,7 +780,7 @@ a {
 .hand-demo,
 .camera-frame {
   position: relative;
-  min-height: 270px;
+  min-height: 600px;
   overflow: hidden;
   border-radius: 16px;
   background:
@@ -1211,8 +1337,10 @@ a {
 .guest-btn,
 .sso,
 .lesson-row,
+.dictionary-card,
 .tab,
-.mode {
+.mode,
+.chip {
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -1222,7 +1350,8 @@ a {
 .sso:hover,
 .lesson-row:not(:disabled):hover,
 .tab:hover,
-.mode:hover {
+.mode:hover,
+.chip:hover {
   transform: translateY(-1px);
 }
 
@@ -1269,7 +1398,8 @@ a {
   }
 
   .home-hero,
-  .lesson-layout {
+  .lesson-layout,
+  .detail-layout {
     grid-template-columns: 1fr;
   }
 }
@@ -1285,7 +1415,10 @@ a {
   .practice-area,
   .unit-grid,
   .mode-cards,
-  .admin-grid {
+  .admin-grid,
+  .dictionary-tools,
+  .dictionary-grid,
+  .detail-media {
     grid-template-columns: 1fr;
   }
 
@@ -1334,6 +1467,7 @@ a {
   .topbar,
   .stage-header,
   .section-title,
+  .detail-heading,
   .correction-box {
     align-items: stretch;
     flex-direction: column;
@@ -1344,6 +1478,14 @@ a {
   .correction-box .primary-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .filter-chips {
+    width: 100%;
+  }
+
+  .chip {
+    flex: 1;
   }
 }
 
